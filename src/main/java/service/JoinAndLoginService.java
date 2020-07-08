@@ -8,5 +8,7 @@ public interface JoinAndLoginService {
 
   public List<JoinAndLoginDTO> selectMember();
 
+  public List<JoinAndLoginDTO> insertMember(JoinAndLoginDTO joinAndLoginDTO);
+
 
 }

@@ -19,23 +19,13 @@
 
   <%--captcha v2--%>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+  <!--===============================================================================================-->
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <!--===============================================================================================-->
-
-  <link rel="icon" type="image/png" href="img/logo/logo.png"/>
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap/css/bootstrap2.min.css">
   <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
   <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="resources/vendor/animate/animate2.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="resources/vendor/css-hamburgers/hamburgers2.min.css">
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="resources/resources/vendor/select2/select22.min.css">
-  <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="resources/css/util2.css">
+  <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="resources/css/main2.css">
   <!--===============================================================================================-->
 </head>

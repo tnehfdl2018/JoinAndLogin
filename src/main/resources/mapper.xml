@@ -6,4 +6,8 @@
 		SELECT * FROM MEMBER WHERE id = #{id}
 	</select>
 
+	<insert id="insertMember" parameterType="JoinAndLoginDTO">
+		INSERT INTO MEMBER (id, pw) value (#{id}, #{pw})
+	</insert>
+
 </mapper>

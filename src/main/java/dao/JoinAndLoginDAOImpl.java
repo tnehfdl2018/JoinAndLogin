@@ -11,10 +11,13 @@ public class JoinAndLoginDAOImpl implements JoinAndLoginDAO {
 
   public List<JoinAndLoginDTO> selectMember() {
 
+    return null;
+  }
 
-
-
+  public List<JoinAndLoginDTO> insertMember(JoinAndLoginDTO joinAndLoginDTO) {
 
     return null;
   }
+
+
 }

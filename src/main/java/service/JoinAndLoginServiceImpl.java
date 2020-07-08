@@ -16,4 +16,10 @@ public class JoinAndLoginServiceImpl implements JoinAndLoginService{
   public List<JoinAndLoginDTO> selectMember() {
     return dao.selectMember();
   }
+
+  public List<JoinAndLoginDTO> insertMember(JoinAndLoginDTO joinAndLoginDTO) {
+    return dao.insertMember(joinAndLoginDTO);
+  }
+
+
 }

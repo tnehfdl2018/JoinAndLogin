@@ -14,6 +14,18 @@
     <property name="prefix" value="/WEB-INF/views/"></property>
     <property name="suffix" value=".jsp"></property>
   </bean>
+  <bean id="javaMailService" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <property name="host" value="smtp.gmail.com"/>
+    <property name="port" value="587"/>
+    <property name="username" value="soobineey@gmail.com"/>
+    <property name="password" value="aA12!@!@"/>
+    <property name="javaMailProperties">
+      <props>
+        <prop key="mail.smtp.auth">true</prop>
+        <prop key="mail.smtp.starttls.enable">true</prop>
+      </props>
+    </property>
+  </bean>
 
   <mvc:resources mapping="/resources/**" location="/static/"/>
 
