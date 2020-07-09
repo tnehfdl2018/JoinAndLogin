@@ -26,6 +26,7 @@
     /*이메일 인증 버튼 클릭시 발생하는 이벤트*/
     $(function () {
       $("#ckAuthDiv").hide();
+      $("#joinBtn").attr('disabled', true);
       $.ajax({
         type: "get",
         url: "/email",
@@ -60,7 +61,6 @@
 
     /*이메일 인증번호 입력 후 인증 버튼 클릭 이벤트*/
     $(document).on("click", "#ckAuth", function () {
-      $("#joinBtn").attr('disabled', true);
       $.ajax({
         type: "get",
         url: "<c:url value='/emailAuth'/>",
@@ -211,8 +211,7 @@ ${random}
         </div>
 
         <div class="container-login100-form-btn">
-          <%--<button class="login100-form-btn" type="submit" id="joinBtn">--%>
-          <button class="login100-form-btn" type="submit">
+          <button class="login100-form-btn" type="submit" id="joinBtn">
             Join
           </button>
         </div>
