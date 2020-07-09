@@ -31,28 +31,13 @@
         url: "/email",
         success: function (data) {
           console.log("난수 발생");
+          console.log(data.toString());
+          /*$("#random").set*/
         },
         error: function (data) {
           console.log("난수 발생 실패");
         }
       });
-      /*$("#ckAuthDiv").hide();
-      $(document).on("click", "#sendEmail", function () {
-        /!*이메일 중복 체크 후 메일 발송 비동기 처리*!/
-        $.ajax({
-          type: "get",
-          url: "/email/createEmailCheck.do",
-          data: "userEmail=" + $("#email").val() + "&random=" + $("#random").val(),
-          success: function (data) {
-            $("#ckAuthDiv").show();
-            alert("사용 가능한 이메일 입니다. 인증번호를 입력 해주세요.");
-          },
-          error: function (data) {
-            alert("에러가 발생했습니다.")
-            return false;
-          }
-        });
-      });*/
     });
 
     $(document).on("click", "#sendEmail", function () {
@@ -83,6 +68,8 @@
         success: function (data) {
           if (data == "complete") {
             alert("인증이 완료되었습니다.");
+            $("#ckAuthDiv").hide();
+            $("#joinBtn").attr('disabled', false);
           } else if (data == "false") {
             alert("인증번호를 잘 못 입력하였습니다.");
           }
@@ -104,25 +91,47 @@
             $("#alert-success").show();
             $("#alert-danger").hide();
             $("#submit").removeAttr("disabled");
-            $("#joinBtn").attr('disabled', false);
           } else if(pw == "" || ckPw == "") {
             $("#alert-success").hide();
             $("#alert-danger").hide();
-            $("#joinBtn").attr('disabled', true);
           } else {
             $("#alert-success").hide();
             $("#alert-danger").show();
             $("#submit").attr("disabled", "disabled");
-            $("#joinBtn").attr('disabled', true);
           }
         }
       });
     });
-    $(document).on("click", "#joinBtn", function () {
+
+
+    /*function join() {
+      console.log("왔어");
       let obj = {
         id: $("#id"),
         pw: $("#pw")
       }
+      console.log(obj);
+      $.ajax({
+        type: "post",
+        url: "joined",
+        data: obj,
+        dataType: "json",
+        success: function () {
+          alert("회원가입에 성공하였습니다.");
+        },
+        error: function () {
+          alert("회원가입중 문제가 발생하였습니다.");
+        }
+      })
+    }*/
+
+    $(document).on("click", "#joinBtn", function () {
+      console.log("왔어");
+      let obj = {
+        id: $("#id"),
+        pw: $("#pw")
+      }
+      console.log(obj);
       $.ajax({
         type: "post",
         url: "/joined",
@@ -135,8 +144,8 @@
           alert("회원가입중 문제가 발생하였습니다.");
         }
       })
-
     });
+
   </script>
 
 </head>
@@ -146,16 +155,8 @@ ${random}
 <div class="limiter">
   <div class="container-login100">
     <div class="wrap-login100">
-     <%-- <div class="login100-pic js-tilt" data-tilt>
-        &lt;%&ndash;<a href="main"><img src="img/logo/logo.png" alt="IMG">&ndash;%&gt;
-        <span class="login100-form-title">
-                Welcome to Soolfarm
-            </span>
-        </a>
-
-      </div>--%>
-
-      <form class="login100-form validate-form" action="joinSubmit" method="post" id="submit_form">
+      <form class="login100-form validate-form" action="/joined" method="post" id="submit_form">
+      <%--<form class="login100-form validate-form">--%>
             <span class="login100-form-title">
                 Member join
             </span>
@@ -205,11 +206,13 @@ ${random}
         </div>
 
         <div>
+          <%--<input type="text" path="random" id="random" value="${random}">--%>
           <input type="text" path="random" id="random" value="${random}">
         </div>
 
         <div class="container-login100-form-btn">
-          <button class="login100-form-btn" disabled="disabled" id="joinBtn">
+          <%--<button class="login100-form-btn" type="submit" id="joinBtn">--%>
+          <button class="login100-form-btn" type="submit">
             Join
           </button>
         </div>

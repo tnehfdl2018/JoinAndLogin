@@ -6,18 +6,18 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 @Mapper
-public class JoinAndLoginDAOImpl implements JoinAndLoginDAO {
+public class JoinAndLoginDAOImpl  {
 
-
-  public List<JoinAndLoginDTO> selectMember() {
-
-    return null;
-  }
-
-  public List<JoinAndLoginDTO> insertMember(JoinAndLoginDTO joinAndLoginDTO) {
-
-    return null;
-  }
+//
+//  public List<JoinAndLoginDTO> selectMember() {
+//
+//    return mapper.selectMember;
+//  }
+//
+//  public List<JoinAndLoginDTO> insertMember(JoinAndLoginDTO joinAndLoginDTO) {
+//
+//    return null;
+//  }
 
 
 }
